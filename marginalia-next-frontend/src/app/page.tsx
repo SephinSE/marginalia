@@ -28,8 +28,13 @@ export default function Home() {
         setResponse("No results found.");
       }
     } catch (error) {
-      console.log(error);
-      setResponse(error.message);
+      if (error instanceof Error) {
+        console.error(error.message);
+        setResponse(error.message);
+      } else {
+        console.error(error);
+        setResponse("Unknown error!");
+      }
     }
   };
 
