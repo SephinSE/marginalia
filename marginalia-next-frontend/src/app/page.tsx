@@ -16,7 +16,8 @@ export default function Home() {
 
         const ocaid = docs[0]?.ia?.[1];
         if (ocaid) {
-          const pdfUrl = `https://archive.org/download/${ocaid}/${ocaid}_djvu.txt`;
+          // const pdfUrl = `https://archive.org/download/${ocaid}/${ocaid}_djvu.txt`;
+          const pdfUrl = `https://archive.org/download/${ocaid}/${ocaid}.pdf`;
           window.open(pdfUrl, "_blank");
         } else {
           alert("No PDF found!");
